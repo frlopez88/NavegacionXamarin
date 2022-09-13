@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavTest.Views.PersonaPut"
+             Title="Put">
+    <Grid BackgroundColor="#4287f5">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height=".25*" ></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="" x:Name="resultado" ></Label>
+        <Entry Placeholder="Ingrese Id " Keyboard="Text" TextChanged="idForm_TextChanged"  x:Name="idForm" Grid.Row="0" Grid.Column="0" />
+        <Entry Placeholder="Ingrese Nombre " Keyboard="Text"  x:Name="nombreForm" Grid.Row="1" Grid.Column="0" />
+        <Entry Placeholder="Ingrese Apellido " Keyboard="Text"  x:Name="apellidoForm" Grid.Row="2" Grid.Column="0" />
+        <Entry Placeholder="Ingrese Genero " Keyboard="Text"  x:Name="generoForm" Grid.Row="3" Grid.Column="0" />
+        <Button Text="Enviar" Clicked="Button_Clicked"  Grid.Row="4" Grid.Column="0"></Button>
+
+    </Grid>
+</ContentPage>
