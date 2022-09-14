@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NavTest.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -33,7 +35,10 @@ namespace NavTest.Views
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    resultado.Text = "Borrado Exitoso";
+
+                    persona contenido = JsonConvert.DeserializeObject<persona>(content);
+
+                    resultado.Text = "Persona Borrada: id = "+contenido.id_persona + " nombre = " +contenido.nombre ;
                 }
                 else
                 {

@@ -1,5 +1,4 @@
-﻿using NavTest.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace NavTest.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PersonaMenu : TabbedPage
+    public partial class MenuPais : TabbedPage
     {
-       
-
-        public PersonaMenu()
+        public MenuPais()
         {
             InitializeComponent();
         }
-
-
     }
 }

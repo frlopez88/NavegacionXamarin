@@ -13,40 +13,37 @@ using Xamarin.Forms.Xaml;
 namespace NavTest.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PersonaPost : ContentPage
+    public partial class PostPais : ContentPage
     {
+        private string url = "https://desfrlopez.me/asosa/api/pais";
 
-        private string url = "https://desfrlopez.me/biblioteca2/api/persona";
-
-        public PersonaPost()
+        public PostPais()
         {
             InitializeComponent();
         }
 
-        private async Task crearPersonaAsync()
+        private async Task postPais()
         {
             using (var httpClient = new HttpClient())
             {
 
-                persona x = new persona()
+                pais x = new pais()
                 {
-                    nombre = nombreForm.Text,
-                    apellido = apellidoForm.Text,
-                    genero = generoForm.Text
+                    nombre_pais = nombreForm.Text,
+                    codigo_de_area = codigoAreaForm.Text
                 };
-
 
 
                 var body = x.toJson();
                 HttpContent c = new StringContent(body, Encoding.UTF8, "application/json");
-                
+
                 var response = await httpClient.PostAsync(url, c);
 
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    persona contenido = JsonConvert.DeserializeObject<persona>(content);
-                    resultado.Text = "Persona Creada: id = " + contenido.id_persona + " nombre = " + contenido.nombre;
+                    pais contenido = JsonConvert.DeserializeObject<pais>(content);
+                    resultado.Text = "Pais Creado: id = " + contenido.idPais + " nombre = " + contenido.nombre_pais;
                 }
                 else
                 {
@@ -54,15 +51,15 @@ namespace NavTest.Views
                 }
 
                 nombreForm.Text = "";
-                apellidoForm.Text = "";
-                generoForm.Text = "";
+                codigoAreaForm.Text = "";
+
 
             }
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            crearPersonaAsync();
+            postPais();
         }
     }
 }

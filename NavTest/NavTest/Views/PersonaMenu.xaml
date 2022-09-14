@@ -8,5 +8,4 @@
     <local:PersonaPost></local:PersonaPost>
     <local:PersonaPut></local:PersonaPut>
     <local:PersonaDelete></local:PersonaDelete>
-
 </TabbedPage>

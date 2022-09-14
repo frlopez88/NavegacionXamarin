@@ -23,7 +23,7 @@ namespace NavTest
 
         private async void enviarPais(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new MenuPais());
         }
     }
 }
